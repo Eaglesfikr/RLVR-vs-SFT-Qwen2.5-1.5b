@@ -4,7 +4,7 @@ This repository presents the results of training Qwen 2.5 1.5B Instruct with SFT
 
 👉 **[Browse full benchmark prompts and model responses on Hugging Face Spaces](https://huggingface.co/spaces/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b)**
 
-👉 **[Download top-scoring model checkpoints on Hugging Face](https://huggingface.co/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b-checkpoints)**
+👉 **[Download trained model checkpoints on Hugging Face](https://huggingface.co/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b-checkpoints)**
 
 
 ### Experiments
