@@ -2,7 +2,7 @@
 
 This repository presents the results of training Qwen 2.5 1.5B Instruct with SFT and RLVR (GRPO) on the GSM8K dataset, analyzing performance across GSM8K and MATH benchmarks.
 
-👉 **[Browse full benchmark prompts and responses on Hugging Face Spaces](https://huggingface.co/spaces/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b)**
+👉 **[Browse full benchmark prompts and model responses on Hugging Face Spaces](https://huggingface.co/spaces/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b)**
 
 👉 **[Download top-scoring model checkpoints on Hugging Face](https://huggingface.co/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b-checkpoints)**
 
@@ -39,14 +39,16 @@ All checkpoints were evaluated using my custom benchmark harness, **lm-eval-ledg
 
 > **Reference:** The [Qwen2.5 technical report](https://arxiv.org/abs/2409.12122) reports **73.2%** on GSM8K for Qwen2.5-1.5B-Instruct (4-shot), though the exact evaluation setup is not fully specified.
 
-Every prompt, model response, and extracted answer from all benchmarks in this project are logged to a SQLite database and can be explored on [Hugging Face Spaces](https://huggingface.co/spaces/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b).
+Every prompt, model response, and extracted answer from all 388 checkpoints across all benchmarks is logged to a SQLite database — over 2.4 million rows, viewable live with datasette on [Hugging Face Spaces](https://huggingface.co/spaces/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b).
 
 **lm-eval-ledger** with full SQLite logging will be released as a standalone project soon!
 
 
 ## Setup
 
-All training was done using [verl](https://github.com/verl-project/verl). The training environment was built with [verlai/verl:vllm012.latest](https://hub.docker.com/layers/verlai/verl/vllm012.latest/images/sha256-9576682f85ca36f4ef719efccc5a5deb4d0b6f66f06fc14f43fdfed0749fbf5d) Dockerfile.
+All training was done using [verl](https://github.com/verl-project/verl). The training environment was built with [verlai/verl:vllm012.latest](https://hub.docker.com/layers/verlai/verl/vllm012.latest/images/sha256-9576682f85ca36f4ef719efccc5a5deb4d0b6f66f06fc14f43fdfed0749fbf5d) Docker image.
+
+Reward functions, training scripts, and training data are available in this repository.
 
 ### RLVR (GRPO)
 
@@ -68,7 +70,7 @@ Standard cross-entropy loss on GSM8K Socratic chain-of-thought responses.
 - Learning rate: 5e-7, cosine schedule with 5% warmup
 - Weight decay: 0.01, gradient clipping: 1.0
 
-All reward functions, training scripts, and training data are available in this repository.
+
 
 
 ### Compute Resources
@@ -136,7 +138,7 @@ SFT immediately degrades both GSM8K and MATH scores, with continued training mak
 
 ## Cheating Analysis: RLVR vs SFT on GSM8K Test Split
 
-To test whether models can cheat by memorizing answers, I tried trained directly on the GSM8K test set.
+To test whether models can cheat by memorizing answers, I tried training directly on the GSM8K test set.
 
 #### SFT on GSM8K Test Split
 
@@ -147,7 +149,7 @@ Similar to SFT on the train set, training immediately degrades both GSM8K and MA
 #### GRPO on GSM8K Test Split
 
 ![GRPO GSM8K Test Reward and Scores](plots/grpo-train-vs-test-reward-and-scores.png)
-GRPO trained on the test set achieves near-perfect GSM8K accuracy, approaching 95%. This highlights a fundamental difference — rather than memorizing specific samples, GRPO reinforces the process of arriving at correct answers through its verifiable reward signal. MATH performance also rises from 49.2 to 51.7, similar to GRPO on the train set, suggesting that some general reasoning improvement has emerged.
+GRPO trained on the test set achieves near-perfect GSM8K accuracy, approaching 95%. This highlights a fundamental difference — rather than memorizing specific samples, GRPO reinforces the process of arriving at correct answers through verifiable reward signal. MATH performance also rises from 49.2 to 51.7, similar to GRPO on the train set, suggesting that some general reasoning improvement has emerged.
 
 ## One-Example RLVR Analysis
 
@@ -174,7 +176,7 @@ MATH: The difference is more pronounced. SFT training causes a steady increase i
 
 ## Training Dynamics
 
-Entropy and KL divergence across all GRPO experiments. Entropy trends show how the model's output distribution evolves during training, while KL divergence tracks how far the model has shifted from its initial behavior.
+Entropy and KL loss across all GRPO experiments. Entropy trends show how the model's output distribution evolves during training, while KL loss tracks how far the model has shifted from its initial behavior.
 
 
 
@@ -185,5 +187,4 @@ Entropy and KL divergence across all GRPO experiments. Entropy trends show how t
 ## Conclusion
 SFT immediately degrades reasoning ability across both benchmarks, exhibiting catastrophic forgetting even while train loss decreases. The model learns surface-level formatting at the cost of general reasoning, producing confidently structured but incorrect answers.
 
-GRPO consistently improves general reasoning ability across all data conditions, from full datasets to a single example, without the catastrophic forgetting seen in SFT. The verifiable reward signal reinforces generalizable reasoning rather than surface-level pattern matching. Even with a single training example, GRPO elicits meaningful improvement, and both one-example runs converge to identical performance regardless of the example used, suggesting the reward signal activates latent reasoning capability rather than memorizing task-specific knowledge.
-
+GRPO consistently improves general reasoning ability across all data conditions, from full datasets to a single example, without the catastrophic forgetting seen in SFT. Even with a single training example, GRPO elicits meaningful improvement, and both one-example runs converge to identical performance regardless of the example used, suggesting the reward signal activates latent reasoning capability rather than memorizing task-specific knowledge.
