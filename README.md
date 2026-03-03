@@ -133,7 +133,8 @@ GRPO on the GSM8K train split shows steady improvement without overfitting. Rewa
 
 ![SFT GSM8K Train Loss and Scores](plots/sft-gsm8k-train-loss-and-scores.png)
 
-SFT immediately degrades both GSM8K and MATH scores, with continued training making things worse even as train loss decreases. This suggests local optimization and overfitting rather than a generalized increase in reasoning ability. Notably, the no-answer rate decreases with SFT training. More on this in the No-Answer Analysis section.
+SFT immediately degrades both GSM8K and MATH scores, with continued training making things worse even as train loss decreases. This suggests SFT overrides the model's pretrained knowledge rather than building on it, leading to local optimization and overfitting rather than a generalized increase in reasoning ability. Notably, the no-answer rate decreases with SFT training. More on this in the No-Answer Analysis section.
+
 
 
 ## Cheating Analysis: RLVR vs SFT on GSM8K Test Split
@@ -163,6 +164,8 @@ Inspired by the [One-Shot-RLVR](https://github.com/ypwang61/One-Shot-RLVR), I te
 One examples are duplicated to fit the batch size of 24 and traind for 1000 steps. 
 
 Training with a single example improves the GSM8K score from 69.7 to 74.2 (+4.5) while maintaining MATH at 49.2 to 49.4 (+0.2), suggesting general reasoning improvement has emerged, though not as much as training with the entire GSM8K train set. Both runs, despite using different examples, converge to the same performance after 1,000 steps. This convergence suggests that GRPO's improvement is driven by the reward signal itself rather than the specific training content.
+
+The π1 example also shows post-saturation generalization (as defined by the [One-Shot-RLVR](https://github.com/ypwang61/One-Shot-RLVR) paper): reward saturates to 1.0 early in training, yet GSM8K and MATH performance continue to improve beyond that point.
 
 ## No-Answer Analysis
 ![no-answer-gsm8k](plots/gsm8k-no-answer.png)
