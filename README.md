@@ -113,8 +113,8 @@ All GRPO and SFT experiments plotted together. GRPO consistently improves or mai
 | **GRPO** | GSM8K test | 1,620 | 95.1(+25.4)* | 51.7 |
 | **GRPO** | DSR 1 example | 1,000 | 74.2 | 49.4 |
 | **GRPO**  | GSM8K 1 example | 1,000 | 74.2 | 49.4 |
-| SFT | GSM8K train | 13,076 | 54.5 | 25.1 |
-| SFT  | GSM8K test | 4,935 | 60.7* | 26.2 |
+| SFT | GSM8K train | 13,076 | 54.5(-15.2) | 25.1 |
+| SFT  | GSM8K test | 4,935 | 60.7(-9)* | 26.2 |
 
 \* Trained on test data, not directly comparable.
 
