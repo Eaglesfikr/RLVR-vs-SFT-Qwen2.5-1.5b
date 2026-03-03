@@ -39,7 +39,7 @@ All checkpoints were evaluated using my custom benchmark harness, **lm-eval-ledg
 
 > **Reference:** The [Qwen2.5 technical report](https://arxiv.org/abs/2409.12122) reports **73.2%** on GSM8K for Qwen2.5-1.5B-Instruct (4-shot), though the exact evaluation setup is not fully specified.
 
-Every prompt, model response, and extracted answer from all 388 checkpoints across all benchmarks is logged to a SQLite database — over 2.4 million rows, viewable live with datasette on [Hugging Face Spaces](https://huggingface.co/spaces/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b).
+Every prompt, model response, and extracted answer from all 388 checkpoints across all benchmarks is logged to a SQLite database, over 2.4 million rows, viewable live with datasette on [Hugging Face Spaces](https://huggingface.co/spaces/jayminban/RLVR-vs-SFT-Qwen2.5-1.5b).
 
 **lm-eval-ledger** with full SQLite logging will be released as a standalone project soon!
 
