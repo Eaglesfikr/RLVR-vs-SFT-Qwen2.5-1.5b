@@ -105,16 +105,17 @@ Compute used for all training runs and benchmarks presented in this project.
 All GRPO and SFT experiments plotted together. GRPO consistently improves or maintains performance, while SFT degrades on both test and train data.
 
 
+
 | Method | Training Data | Steps | GSM8K (0-shot) | MATH (0-shot) |
 |--------|--------------|-------|:--------------:|:-------------:|
 | Qwen2.5-1.5B-Instruct (reproduced) | — | — | 69.7 | 49.2 |
 | Qwen2.5-1.5B-Instruct (paper, 4-shot) | — | — | 73.2 | 55.2 |
-| **GRPO**  | GSM8K train | 3,900 | **81.6(+11.9)** | 52.3 |
-| **GRPO** | GSM8K test | 1,620 | 95.1(+25.4)* | 51.7 |
-| **GRPO** | DSR 1 example | 1,000 | 74.2 | 49.4 |
-| **GRPO**  | GSM8K 1 example | 1,000 | 74.2 | 49.4 |
-| SFT | GSM8K train | 13,076 | 54.5(-15.2) | 25.1 |
-| SFT  | GSM8K test | 4,935 | 60.7(-9)* | 26.2 |
+| **GRPO**  | GSM8K train | 3,900 | **81.6(+11.9)** | 52.3(+3.1) |
+| **GRPO** | GSM8K test | 1,620 | 95.1(+25.4)* | 51.7(+2.5) |
+| **GRPO** | DSR 1 example | 1,000 | 74.2(+4.5) | 49.4(+0.2) |
+| **GRPO**  | GSM8K 1 example | 1,000 | 74.2(+4.5) | 49.4(+0.2) |
+| SFT | GSM8K train | 13,076 | 54.5(-15.2) | 25.1(-24.1) |
+| SFT  | GSM8K test | 4,935 | 60.7(-9.0)* | 26.2(-23.0) |
 
 \* Trained on test data, not directly comparable.
 
