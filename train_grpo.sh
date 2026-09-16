@@ -16,7 +16,6 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
     actor_rollout_ref.actor.ppo_max_token_len_per_gpu=12000 \
     actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=32 \
     actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=32 \
-    actor_rollout_ref.ref.fsp_config.param_offload=true \
     data.max_prompt_length=512 \
     data.max_response_length=3584 \
     data.truncation=left \
