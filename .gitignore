@@ -1,0 +1,6 @@
+models/
+wandb/
+data/
+outputs/
+
+*log
