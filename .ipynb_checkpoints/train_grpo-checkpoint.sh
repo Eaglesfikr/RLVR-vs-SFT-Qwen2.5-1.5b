@@ -3,7 +3,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export CUDA_VISIBLE_DEVICES=2,3,4,5,6,7
+export CUDA_VISIBLE_DEVICES=0
 
 PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
@@ -19,8 +19,8 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
     data.max_prompt_length=512 \
     data.max_response_length=3584 \
     data.truncation=left \
-    actor_rollout_ref.model.path=/models/Qwen_Qwen2.5-1.5B-Instruct \
-    actor_rollout_ref.model.local_tokenizer_path=/models/Qwen_Qwen2.5-1.5B-Instruct \
+    actor_rollout_ref.model.path="$SCRIPT_DIR/models/qwen2-5-1-5b-instruct" \
+    +actor_rollout_ref.model.local_tokenizer_path="$SCRIPT_DIR/models/qwen2-5-1-5b-instruct" \
     actor_rollout_ref.model.enable_gradient_checkpointing=true \
     +actor_rollout_ref.model.override_config.max_position_embeddings=4096 \
     actor_rollout_ref.actor.use_kl_loss=true \
