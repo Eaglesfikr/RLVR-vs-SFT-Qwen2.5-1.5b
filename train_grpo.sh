@@ -8,6 +8,7 @@ export CUDA_VISIBLE_DEVICES=0
 PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files="$SCRIPT_DIR/data/train.parquet" \
+    +model.override_config.attn_implementation=eager \
     data.val_files="$SCRIPT_DIR/data/gsm8k_test.parquet" \
     data.train_batch_size=4 \
     actor_rollout_ref.rollout.n=6 \
