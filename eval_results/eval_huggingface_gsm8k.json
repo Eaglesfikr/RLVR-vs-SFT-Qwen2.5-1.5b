@@ -1,0 +1,168 @@
+{
+  "model": "/root/autodl-tmp/RLVR-vs-SFT-Qwen2.5-1.5b/outputs/sft_12-09_1840/global_step_13076/huggingface",
+  "accuracy": 35.0,
+  "correct": 7,
+  "total": 20,
+  "results": [
+    {
+      "idx": 0,
+      "prompt": "[{'content': \"Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many eggs do the ducks lay? ** First find how many eggs the ducks lay each day that Janet doesn't use to bake muffins or eat for breakfast: 16 eggs/day - 3 eggs/morning + 4 eggs/day = 17 eggs/day\n",
+      "ground_truth": "18",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 1,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many bolts of white fiber does the robe take? ** The robe takes 2 * 0.5 = 1 bolt of white fiber.\nHow many bolts in total does it take? ** Thus, the robe takes 2 + 1 = 3 bolts in total.\n\\boxed{3}",
+      "ground_truth": "3",
+      "score": 1.0,
+      "correct": true
+    },
+    {
+      "idx": 2,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How much did the value of the house increase? ** The value of the house increased by 80,000*1.5=$120,000\nHow much was the selling price? ** So the selling price was 80,000+50,000+120,000=$250,000\nHow ",
+      "ground_truth": "70000",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 3,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many meters does James run in one session? ** In one session, James runs 60*3=180 meters.\nHow many meters does James run in one week? ** Since he does this three times a week, he runs 180*3=540 me",
+      "ground_truth": "540",
+      "score": 1.0,
+      "correct": true
+    },
+    {
+      "idx": 4,
+      "prompt": "[{'content': \"Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many cups of feed did Wendi give to all the chickens? ** First find how many total cups of feed Wendi gave to all the chickens: 15 cups + 25 cups = 40 cups\nHow many cups of feed does Wendi need to",
+      "ground_truth": "20",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 5,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many glasses cost $5? ** First find how many glasses cost $5 each: 16 glasses / 2 = 8 glasses\nHow much do the first 8 glasses cost? ** Then multiply that number by the cost per glass to find the t",
+      "ground_truth": "64",
+      "score": 1.0,
+      "correct": true
+    },
+    {
+      "idx": 6,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many sheep does Charleston have? ** Let s be the number of sheep in Seattle and c be the number of sheep in Charleston. We know that s = 20 and c = 4s.\nHow many sheep does Charleston have? ** So c",
+      "ground_truth": "260",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 7,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many minutes did Carla spend downloading? ** First find how long the update process took in minutes: 20 minutes * .4 = 8 minutes.\nHow many minutes did Carla spend downloading? ** Now subtract that",
+      "ground_truth": "160",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 8,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many miles does John travel in the first hour? ** First Hour: 60*1=60\nHow many miles does John travel in the second hour? ** Second Hour: 60*1=60\nHow many miles does John travel in the third hour?",
+      "ground_truth": "45",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 9,
+      "prompt": "[{'content': \"Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many hours did Eliza work? ** First find the total number of hours Eliza worked at her overtime pay: 45 hours - 40 hours = 5 hours\nHow much does Eliza earn in overtime? ** Then multiply that amoun",
+      "ground_truth": "460",
+      "score": 1.0,
+      "correct": true
+    },
+    {
+      "idx": 10,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many downloads were there in the second month? ** In the second month, the program had 60 * 3 = 180 downloads.\nHow many downloads were there in the third month? ** Then it reduced this amount by 1",
+      "ground_truth": "366",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 11,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many dozens did Toula buy? ** First find how many dozens Toula bought in total: 3 dozen + 2 dozen + 6 dozen = 11 dozen\nHow much did each dozen cost? ** Then multiply that number by the cost per do",
+      "ground_truth": "694",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 12,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How much does the tree cost? ** First find how much the tree costs in total over its lifetime: $90 + (7 lemons/year * $1.5/lemon) = $94.5.\nHow much does the tree cost per year? ** Then divide the init",
+      "ground_truth": "13",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 13,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many vacuum cleaners were there after the first stop? ** After the first stop, there were 5*3=15 vacuum cleaners.\nHow many vacuum cleaners were there before the second stop? ** Before the second s",
+      "ground_truth": "18",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 14,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many students enrolled in contemporary dance? ** Contemporary = 20 * 20/100 = 4 students.\nHow many students enrolled in jazz dance? ** Remaining = 20 - 4 = 16 students.\nHow many students enrolled ",
+      "ground_truth": "60",
+      "score": 1.0,
+      "correct": true
+    },
+    {
+      "idx": 15,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How much money does the merchant have? ** The total amount of money the merchant has is $5,000 + $8,000 = $13,000.\nHow much money will the jewelry cost in one month? ** In one month, the value of the ",
+      "ground_truth": "125",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 16,
+      "prompt": "[{'content': \"Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many miles did the first train cover? ** First calculate how far the first train traveled on the second day: 150 miles * 2 = 300 miles.\nHow many miles did the first train travel in total? ** Add t",
+      "ground_truth": "230",
+      "score": 0.0,
+      "correct": false
+    },
+    {
+      "idx": 17,
+      "prompt": "[{'content': \"Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How much does Jill make from teaching? ** First find how much Jill makes in a week from teaching: $20/hour * 35 hours/week = $700/week\nHow much does Jill make from coaching? ** Then find how much Jill",
+      "ground_truth": "57500",
+      "score": 1.0,
+      "correct": true
+    },
+    {
+      "idx": 18,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many eggs does Claire make each week? ** Every day she makes 3 eggs so that's 3*7=21 eggs per week.\nHow many eggs does Claire make in 4 weeks? ** In four weeks she would have made 21*4 =84 eggs.\nH",
+      "ground_truth": "7",
+      "score": 1.0,
+      "correct": true
+    },
+    {
+      "idx": 19,
+      "prompt": "[{'content': 'Output format: end your response with \\\\boxed{<answer>} where <answer> is the final nu",
+      "response": "How many minutes did Marissa take to hike? ** First find how many minutes Marissa needs to hike in total: 12 miles - 4 miles - 2 miles = 6 miles\nHow many hours did Marissa take to hike? ** Then divide",
+      "ground_truth": "6",
+      "score": 0.0,
+      "correct": false
+    }
+  ]
+}

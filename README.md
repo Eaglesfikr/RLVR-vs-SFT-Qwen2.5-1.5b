@@ -192,3 +192,9 @@ Entropy and KL loss across all GRPO experiments. Entropy trends show how the mod
 SFT immediately degrades reasoning ability across both benchmarks, exhibiting catastrophic forgetting even while train loss decreases. The model learns surface-level formatting at the cost of general reasoning, producing confidently structured but incorrect answers.
 
 GRPO consistently improves general reasoning ability across all data conditions, from full datasets to a single example, without the catastrophic forgetting seen in SFT. Even with a single training example, GRPO elicits meaningful improvement, and both one-example runs converge to identical performance regardless of the example used, suggesting the reward signal activates latent reasoning capability rather than memorizing task-specific knowledge.
+
+
+
+
+## 作者这里没有评估
+他是单独实现的

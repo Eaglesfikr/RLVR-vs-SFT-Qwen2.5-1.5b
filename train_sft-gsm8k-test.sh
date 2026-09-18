@@ -8,12 +8,13 @@ export CUDA_VISIBLE_DEVICES=0
 PYTHONUNBUFFERED=1 torchrun --standalone --nproc_per_node=1 \
     -m verl.trainer.sft_trainer \
     data.train_files="$SCRIPT_DIR/data/sft_gsm8k_test.parquet" \
+    +model.override_config.attn_implementation=eager \
     data.train_batch_size=4 \
     data.micro_batch_size_per_gpu=1 \
     data.use_dynamic_bsz=false \
     data.max_length=4096 \
     data.truncation=left \
-    model.path=/mnt/2data/Documents/safetensors/Qwen_Qwen2.5-1.5B-Instruct \
+    model.path="$SCRIPT_DIR/outputs/sft_12-09_1840/global_step_13076/huggingface" \
     model.enable_gradient_checkpointing=true \
     +model.override_config.max_position_embeddings=4096 \
     optim.lr=5e-7 \
